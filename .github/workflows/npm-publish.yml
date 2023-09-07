@@ -5,8 +5,8 @@ name: publish Package to npmjs
 
 on:
   push:
-    tags:
-      - '**'
+    branches:
+      - master
 
 jobs:
   build:

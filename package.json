@@ -8,8 +8,7 @@
     "init": "umi dev"
   },
   "bin": {
-    "pqc": "./index.js",
-    "add": "./create.js"
+    "pqc": "./index.js"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",

@@ -1,4 +1,4 @@
-﻿exports.esstd_usbkey_modern = `import { esSafariIs12Plus } from '@/utils/USBkey/esstd_usbkey_util'
+﻿import { esSafariIs12Plus } from '@/utils/USBkey/esstd_usbkey_util'
 console.log("esstd_usbkey_websocket.js begins");
 
 // 初始化一个 WebSocket 对象
@@ -542,4 +542,3 @@ function esKeyAsymDec(dn, inputData) {
 }
 
 console.log("esstd_usbkey_websocket.js ends");
-`

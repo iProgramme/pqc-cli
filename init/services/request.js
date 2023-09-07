@@ -1,4 +1,4 @@
-exports.requestService = `import axios from 'axios';
+import axios from 'axios';
 import { 
     getTenantId, 
     getToken 
@@ -6,8 +6,6 @@ import {
 import { message } from 'antd'
 // import { RESPONSE_CODE } from './constants';
 
-// const baseURL = 'http://172.16.0.96:8081';
-// export const baseURL = 'http://172.16.0.209:8088/';
 export const baseURL = 'http://localhost:8000/';
 
 const service = axios.create({
@@ -101,4 +99,4 @@ export const http = {
         setHeaderToken(isNeedToken, url)
         return service.delete(url, config)
     }
-}`
+}

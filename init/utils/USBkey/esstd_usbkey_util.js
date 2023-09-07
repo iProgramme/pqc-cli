@@ -1,4 +1,4 @@
-exports.esstd_usbkey_util = `console.log("esstd_usbkey_util.js begins");
+console.log("esstd_usbkey_util.js begins");
 
 function esGetBrowserInfo() {
 	var browser = {};
@@ -193,4 +193,3 @@ function esPluginType () {
 }
 
 console.log("esstd_usbkey_util.js ends");
-`

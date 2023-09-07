@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "author": "喻博文 <yubowen@yubowen2003.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "ahooks": "^3.7.8",
+    "antd": "^5.4.7",
+    "axios": "^1.5.0",
+    "jsencrypt": "^3.3.2",
+    "umi": "^4.0.68"
+  },
+  "overrides": {
+    "@ant-design/charts": {
+      "antd": "^5.3.1",
+      "@ant-design/icons": "^5.0.1"
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7"
+  }
+}

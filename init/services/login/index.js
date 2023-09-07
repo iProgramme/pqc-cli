@@ -1,4 +1,4 @@
-exports.loginService = `import { http } from '../request';
+import { http } from '../request';
 
 // 账户密码登录
 export const loginService = (data) => {
@@ -30,4 +30,4 @@ export const updatePasswordService = (data) => {
 // 获取登录方式
 export const getLoginWayService = () => {
     return http.get('/auth/login/way');
-}`
+}

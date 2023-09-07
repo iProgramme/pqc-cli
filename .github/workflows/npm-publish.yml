@@ -4,6 +4,8 @@
 name: publish Package to npmjs
 
 on:
+  release:
+    types: [created]
   push:
     branches:
       - master

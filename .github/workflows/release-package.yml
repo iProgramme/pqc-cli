@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
-      id: release
-        with:
-          token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
-          release-type: node
-          package-name: standard-version
+        id: release
+          with:
+            token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+            release-type: node
+            package-name: standard-version

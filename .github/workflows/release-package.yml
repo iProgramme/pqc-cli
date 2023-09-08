@@ -2,13 +2,11 @@ name: Release
 
 on:
   push:
-    branches:
-      - main
-
+    paths:
+      - 'package.json'
 jobs:
   release:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2

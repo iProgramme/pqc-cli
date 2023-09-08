@@ -9,11 +9,12 @@ on:
 
 
 jobs:
-  update_release_draft:
-    permissions:
-      contents: write  # for release-drafter/release-drafter to create a github release
+  release_please:
     runs-on: ubuntu-latest
     steps:
-      - uses: release-drafter/release-drafter@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+      - uses: google-github-actions/release-please-action@v3
+      id: release
+        with:
+          token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+          release-type: node
+          package-name: standard-version

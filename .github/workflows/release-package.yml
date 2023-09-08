@@ -23,7 +23,7 @@ jobs:
         echo "::set-output name=commit_message::$(git log --format=%B -n 1 $GITHUB_SHA)"
 
     - name: Check if version changed
-        id: version_changed
+        id: versionchanged
         run: |
           PREVIOUS_VERSION=$(cat previous_version.txt)
           CURRENT_VERSION=${{ steps.package.outputs.version }}

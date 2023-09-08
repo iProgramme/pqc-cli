@@ -25,15 +25,15 @@ jobs:
     - name: Check if version changed
       id: versionchanged
       run: |
-        PREVIOUS_VERSION=$(cat previous_version.txt)
-        CURRENT_VERSION=${{ steps.package.outputs.version }}
-        if [ "$PREVIOUS_VERSION" != "$CURRENT_VERSION" ]; then
-          echo "Version has changed. Proceeding with release..."
-          echo "$CURRENT_VERSION" > previous_version.txt
-        else
-          echo "Version has not changed. Skipping release..."
-          exit 78  # This exits the workflow without failing it
-        fi
+        PREVIOUS_VERSION="${{ env.PREVIOUS_VERSION }}"
+          CURRENT_VERSION=${{ steps.package.outputs.version }}
+          if [ "$PREVIOUS_VERSION" != "$CURRENT_VERSION" ]; then
+            echo "Version has changed. Proceeding with release..."
+            echo "CURRENT_VERSION" >> $GITHUB_ENV
+          else
+            echo "Version has not changed. Skipping release..."
+            exit 0  # This exits the step with success
+          fi
           
     - name: Create Release
       id: create_release

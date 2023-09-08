@@ -4,8 +4,6 @@
 name: publish to GitHub Package
 
 on:
-  release:
-    types: [created]
   push:
     paths:
       - 'package.json'

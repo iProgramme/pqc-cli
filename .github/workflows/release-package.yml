@@ -1,20 +1,35 @@
-name: GitHub Release
+name: Release
 
 on:
-  release:
-    types: [created]
   push:
     branches:
       - main
 
-
 jobs:
-  release_please:
+  release:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: google-github-actions/release-please-action@v3
-        id: release
-        with:
-          token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
-          release-type: node
-          package-name: standard-version
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Read package.json
+      id: package
+      run: |
+        echo "::set-output name=version::v$(jq -r .version package.json)"
+        echo "::set-output name=commit_message::$(git log --format=%B -n 1 $GITHUB_SHA)"
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.package.outputs.version }}
+        release_name: ${{ steps.package.outputs.version }}
+        body: ${{ steps.package.outputs.commit_message }}

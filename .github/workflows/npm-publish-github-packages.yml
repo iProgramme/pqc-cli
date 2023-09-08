@@ -4,9 +4,8 @@
 name: publish to GitHub Package
 
 on:
-  push:
-    paths:
-      - 'package.json'
+  release:
+    types: [created]
 jobs:
   build:
     runs-on: ubuntu-latest

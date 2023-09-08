@@ -4,9 +4,8 @@
 name: publish to npmjs
 
 on:
-  push:
-    paths:
-      - 'package.json'
+  release:
+    types: [created]
 
 jobs:
   build:

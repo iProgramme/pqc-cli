@@ -2,8 +2,8 @@ name: Release
 
 on:
   push:
-    paths:
-      - 'package.json'
+    branches:
+      - main
 jobs:
   release:
     runs-on: ubuntu-latest

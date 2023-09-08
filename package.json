@@ -1,6 +1,6 @@
 {
   "name": "@iprogramme/pqc-cli",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "喻博文 <yubowen@yubowen2003.com>",
   "description": "自定义量安脚手架，包括初始化登录页（包含账号登陆和UK登陆），具体见README.md",
   "license": "MIT",

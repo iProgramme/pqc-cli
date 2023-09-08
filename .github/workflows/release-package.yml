@@ -1,4 +1,4 @@
-name: Node.js Package release
+name: GitHub Release
 
 on:
   release:
